@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <CommunicationClass name="server" x="189" y="175">
+        <Association destinationClassName="ServerAcceptThread"
+            endpointName="aa" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="User" x="197" y="535"/>
+    <CommunicationClass name="DBer" x="467" y="325">
+        <Communication destinationClassName="User"/>
+    </CommunicationClass>
+    <CommunicationClass name="Message" x="773" y="511">
+        <Association destinationClassName="User" endpointName="sender" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="ServerAcceptThread" x="334" y="45">
+        <Association destinationClassName="User" endpointName="mm" kind="Simple"/>
+        <Association destinationClassName="User" endpointName="b" kind="Simple"/>
+        <Communication destinationClassName="User"/>
+        <Communication destinationClassName="DBer"/>
+        <Communication destinationClassName="ServerKeepThread"/>
+        <Communication destinationClassName="ThreadSaveThread"/>
+    </CommunicationClass>
+    <CommunicationClass name="checknicknameThread" x="82" y="247"/>
+    <CommunicationClass name="MessageType" x="162" y="40"/>
+    <CommunicationClass name="ServerKeepThread" x="748" y="279">
+        <Communication destinationClassName="User"/>
+        <Communication destinationClassName="Message"/>
+        <Communication destinationClassName="ThreadSaveThread"/>
+    </CommunicationClass>
+    <CommunicationClass name="ThreadSaveThread" x="670" y="73">
+        <Association destinationClassName="ServerKeepThread"
+            endpointName="hm" kind="Simple"/>
+        <Communication destinationClassName="DBer"/>
+    </CommunicationClass>
+</ClassDiagram>

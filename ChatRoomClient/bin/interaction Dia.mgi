@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <CommunicationClass name="GG" x="355" y="200">
+        <Association destinationClassName="ClientKeepThread"
+            endpointName="sc" kind="Simple"/>
+        <Association destinationClassName="User" endpointName="u" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="User" x="637" y="374"/>
+    <CommunicationClass name="Message" x="500" y="209">
+        <Association destinationClassName="User" endpointName="sender" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="GGclient" x="197" y="180">
+        <Association destinationClassName="User" endpointName="c" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="ClientKeepThread" x="289" y="292">
+        <Association destinationClassName="User" endpointName="aaa" kind="Simple"/>
+        <Communication destinationClassName="ChatSave"/>
+        <Communication destinationClassName="User"/>
+        <Communication destinationClassName="GroupChatSave"/>
+    </CommunicationClass>
+    <CommunicationClass name="clientSaveThread" x="656" y="120">
+        <Association destinationClassName="ClientKeepThread"
+            endpointName="hm" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="GroupChat" x="487" y="121">
+        <Association destinationClassName="User" endpointName="u" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="ChatSave" x="292" y="427">
+        <Association destinationClassName="ChatFrame" endpointName="hm" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="ChatFrame" x="316" y="115">
+        <Association destinationClassName="User" endpointName="u" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="GroupChatSave" x="2" y="249">
+        <Association destinationClassName="GroupChat" endpointName="hm" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="MessageType" x="61" y="116"/>
+    <CommunicationClass name="register" x="445" y="46">
+        <Association destinationClassName="Message" endpointName="msg" kind="Simple"/>
+    </CommunicationClass>
+    <CommunicationClass name="setTime" x="212" y="48"/>
+</ClassDiagram>
